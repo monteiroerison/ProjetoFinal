@@ -4,20 +4,20 @@ import pyaes
 # Nome do arquivo criptografado
 encrypted_file_name = "DesafioFinal.txt.ransomware"
 # Nome do arquivo descriptografado
-decrypted_file_name = "descriptografado_DesafioFinal.txt"
+decrypted_file_name = "DesafioFinal.txt"
+
+# Chave de descriptografia (deve ser a mesma usada para criptografar)
+key = b'cybersecurity123'  # Certifique-se de usar 16, 24 ou 32 bytes
 
 # Dados do arquivo criptografado
 with open(encrypted_file_name, "rb") as encrypted_file:
     encrypted_data = encrypted_file.read()
 
-# Chave de descriptografia
-key = b'cybersecuritysantander2'  # A mesma chave usada para a criptografia
-
 # Criar um objeto AES para descriptografia
 aes = pyaes.AESModeOfOperationCTR(key)
 decrypted_data = aes.decrypt(encrypted_data)
 
-# Criar o arquivo descriptografado
+# Salvar o arquivo descriptografado
 with open(decrypted_file_name, "wb") as decrypted_file:
     decrypted_file.write(decrypted_data)
 
